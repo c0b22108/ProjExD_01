@@ -17,7 +17,9 @@ def main():
             if event.type == pg.QUIT: return
 
         tmr += 1
-        screen.blit(bg_img, [0, 0])
+        bg_pos = 1599 - tmr 
+        bg_pos = -tmr
+        screen.blit(bg_img, [bg_pos, 0])
         screen.blit(kokaton_list[tmr % 2],[300,200])
         #screen.blit(kokaton_img_grad_10,[300,400])
         pg.display.update()
