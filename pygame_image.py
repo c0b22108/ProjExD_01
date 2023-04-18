@@ -12,15 +12,23 @@ def main():
     kokaton_list = [kokaton_img_flip,kokaton_img_grad_10]
     tmr = 0
 
+    kokaton_grad = True
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        tmr += 1
-        bg_pos = 1599 - tmr 
+        tmr += 1 
         bg_pos = -(tmr % (1599 - 800)) 
+        if (tmr % (1599 - 800)) == 0:
+            bg_img = pg.transform.flip(bg_img,True,False)
+            print("flip now")
         screen.blit(bg_img, [bg_pos, 0])
-        screen.blit(kokaton_list[tmr % 2],[300,200])
+
+        #screen.blit(pg.transform.rotate(kokaton_img_flip,tmr%10),[300,200])
+        #screen.blit(kokaton_img,[300,300])
+        if tmr % 50 == 0:
+            kokaton_grad = not kokaton_grad 
+        screen.blit(kokaton_list[kokaton_grad],[300,200])
         #screen.blit(kokaton_img_grad_10,[300,400])
         pg.display.update()
         clock.tick(100)
