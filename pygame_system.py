@@ -8,7 +8,7 @@ def main():
     fonto  = pg.font.Font(None, 80)
     tmr = 0
 
-    while True:
+    while True
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         
