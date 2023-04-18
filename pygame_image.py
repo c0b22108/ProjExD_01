@@ -6,8 +6,10 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("../ex01/fig/pg_bg.jpg")
-    koukaton_img = pg.image.load("fig/3.png")
-    kokaton_img = pg.transform.flip(koukaton_img,True,False)
+    kokaton_img = pg.image.load("fig/3.png")
+    kokaton_img_flip = pg.transform.flip(kokaton_img,True,False)
+    kokaton_img_grad_10 = pg.transform.rotate(kokaton_img_flip,10)
+    kokaton_list = [kokaton_img_flip,kokaton_img_grad_10]
     tmr = 0
 
     while True:
@@ -16,7 +18,8 @@ def main():
 
         tmr += 1
         screen.blit(bg_img, [0, 0])
-        screen.blit(kokaton_img,[300,300])
+        #screen.blit(kokaton_img_flip,[300,200])
+        #screen.blit(kokaton_img_grad_10,[300,400])
         pg.display.update()
         clock.tick(100)
 
