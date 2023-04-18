@@ -18,7 +18,7 @@ def main():
 
         tmr += 1
         bg_pos = 1599 - tmr 
-        bg_pos = -tmr
+        bg_pos = -(tmr % (1599 - 800)) 
         screen.blit(bg_img, [bg_pos, 0])
         screen.blit(kokaton_list[tmr % 2],[300,200])
         #screen.blit(kokaton_img_grad_10,[300,400])
