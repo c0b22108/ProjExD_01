@@ -18,7 +18,7 @@ def main():
 
         tmr += 1
         screen.blit(bg_img, [0, 0])
-        #screen.blit(kokaton_img_flip,[300,200])
+        screen.blit(kokaton_list[tmr % 2],[300,200])
         #screen.blit(kokaton_img_grad_10,[300,400])
         pg.display.update()
         clock.tick(100)
