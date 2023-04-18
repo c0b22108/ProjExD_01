@@ -24,10 +24,12 @@ def main():
 
         bg_pos = -(tmr % (1600)) 
         
+        #ずっと1600にしててうまくいかなかった
         if (bg_pos + 1599) == 0:
             bg_pos = 0
             #bg_img_flip = pg.transform.flip(bg_img_flip,True,True)
             #bg_img = pg.transform.flip(bg_img,True,True)
+            #flip
             img_buff = bg_img_flip
             bg_img_flip = bg_img
             bg_img =  img_buff
@@ -42,11 +44,11 @@ def main():
         screen.blit(bg_img_flip,[bg_pos + 1600, 0])
         
 
+        #small window
+        #screen.blit(pg.transform.rotozoom(bg_img_flip,0,0.125),[(bg_pos + 1610) * 0.125 + 100, 100])
+        #screen.blit(pg.transform.rotozoom(bg_img,0,0.125),[(bg_pos) * 0.125 + 100, 100])
         
-        screen.blit(pg.transform.rotozoom(bg_img_flip,0,0.125),[(bg_pos + 1610) * 0.125 + 100, 100])
-        screen.blit(pg.transform.rotozoom(bg_img,0,0.125),[(bg_pos) * 0.125 + 100, 100])
-        
-        screen.blit(pg.transform.rotozoom(bg_img_flip,0,0.0625),[(0) * 0.125 + 100, 200])
+        #screen.blit(pg.transform.rotozoom(bg_img_flip,0,0.0625),[(0) * 0.125 + 100, 200])
 
         if tmr % 50 == 0:
             kokaton_grad = not kokaton_grad 
